@@ -404,6 +404,10 @@ curl -X POST --data '{ "request":[ {"customer":"4103446", "ExcludePromotion":"ye
 
 ## Changes history:
 
+### 1.1.3
+* Feature: Adds default wiremock handlebars support to jsonParamQuery
+* Feature: Adds interpolation from previous query to jsonParamQuery
+
 ### 1.1.2
 
 * Feature: Use Json request body as part of POST methods and extract parameters from Json request to use in SQL queries 
