@@ -247,8 +247,11 @@ The following operations are available:
     * "suffix"
     * "separator"
 * "fromQuery": Use the result of an SQL query and put it in a parameter. If the query returns multiple columns or multiple lines, the parameter will hold a list. Multiple columns and lines are not handled. Parameters:
-    * "action": "fromQuery",
-    * "query": The query to execute. All previously available or defined parameters can be used in it. 
+  * "action": "fromQuery",
+  * "query": The query to execute. All previously available or defined parameters can be used in it.
+* "fromJsonParamQuery": Use the result of an SQL query (with use of jsonParamQuery) and put it in a parameter. If the query returns multiple columns or multiple lines, the parameter will hold a list. Multiple columns and lines are not handled. Parameters:
+  * "action": "fromJsonParamQuery",
+  * "jsonParamQuery": The query to execute. All previously available or defined parameters can be used in it.
 * "escapeSql": Escapes quotes in one or more strings to use them in SQL strings. Parameters:
     * "action": "escapeSql",
     * "sourceParam": Name of the parameter containing the values to escape.
@@ -403,6 +406,9 @@ In addition, this example uses a global configuration file allowing to change th
 curl -X POST --data '{ "request":[ {"customer":"4103446", "ExcludePromotion":"yes", "products":[{"product":"4099073", "quantity": 13}] } ] }' -H "Content-Type:application/json" http://localhost:8181/prices
 
 ## Changes history:
+
+### 1.1.4
+* Feature: Adds fromJsonParamQuery to customparameters
 
 ### 1.1.3
 * Feature: Adds default wiremock handlebars support to jsonParamQuery
